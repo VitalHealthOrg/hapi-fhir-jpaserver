@@ -11,14 +11,14 @@
     <parent>
         <groupId>ca.uhn.hapi.fhir</groupId>
         <artifactId>hapi-fhir</artifactId>
-        <version>3.7.0-SNAPSHOT</version>
+        <version>3.6.0</version>
     </parent>
 
-    <groupId>ca.uhn.hapi.fhir.demo</groupId>
-    <artifactId>hapi-fhir-jpaserver-starter</artifactId>
+    <groupId>com.vitalhealthsoftware.fhir.server</groupId>
+    <artifactId>philips-vitalhealth-fhir-server</artifactId>
     <packaging>war</packaging>
 
-    <name>HAPI FHIR JPA Server - Starter Project</name>
+    <name>Philips Vitalhealth - FHIR Server</name>
 
     <repositories>
         <repository>

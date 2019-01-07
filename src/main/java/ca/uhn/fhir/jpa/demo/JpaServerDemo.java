@@ -168,7 +168,7 @@ public class JpaServerDemo extends RestfulServer {
          */
         boolean subscriptionsEnabled = false;
         if (subscriptionsEnabled) { // <-- DISABLED RIGHT NOW
-            SubscriptionRestHookInterceptor restHookInterceptor = myAppCtx.getBean(SubscriptionRestHookInterceptor.class);
+            SubscriptionRestHookInterceptor restHookInterceptor = myAppCtx.getBean  (SubscriptionRestHookInterceptor.class);
             registerInterceptor(restHookInterceptor);
 
             // You might alo want to enable other subscription interceptors too
