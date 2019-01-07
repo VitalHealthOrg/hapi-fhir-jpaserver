@@ -93,13 +93,13 @@ public class JpaServerDemo extends RestfulServer {
             IFhirSystemDao<ca.uhn.fhir.model.dstu2.resource.Bundle, MetaDt> systemDao = myAppCtx.getBean("mySystemDaoDstu2", IFhirSystemDao.class);
             JpaConformanceProviderDstu2 confProvider = new JpaConformanceProviderDstu2(this, systemDao,
                     myAppCtx.getBean(DaoConfig.class));
-            confProvider.setImplementationDescription("Example Server");
+            confProvider.setImplementationDescription("Philips Vitalhealth - FHIR Server (DSTU2)");
             setServerConformanceProvider(confProvider);
         } else if (fhirVersion == FhirVersionEnum.DSTU3) {
             IFhirSystemDao<Bundle, Meta> systemDao = myAppCtx.getBean("mySystemDaoDstu3", IFhirSystemDao.class);
             JpaConformanceProviderDstu3 confProvider = new JpaConformanceProviderDstu3(this, systemDao,
                     myAppCtx.getBean(DaoConfig.class));
-            confProvider.setImplementationDescription("Example Server");
+            confProvider.setImplementationDescription("Philips Vitalhealth - FHIR Server (DSTU3)");
             setServerConformanceProvider(confProvider);
         } else {
             throw new IllegalStateException();

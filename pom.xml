@@ -205,7 +205,7 @@
     <build>
 
         <!-- Tells Maven to name the generated WAR file as hapi-fhir-jpaserver.war -->
-        <finalName>hapi-fhir-jpaserver</finalName>
+        <finalName>philips-vitalhealth-fhir-server</finalName>
 
         <!-- The following is not required for the application to build, but allows you to test it by issuing "mvn jetty:run" from the command line. -->
         <pluginManagement>
@@ -216,7 +216,7 @@
                     <version>9.4.8.v20180619</version>
                     <configuration>
                         <webApp>
-                            <contextPath>/hapi-fhir-jpaserver</contextPath>
+                            <contextPath>/philips-vitalhealth-fhir-server</contextPath>
                             <allowDuplicateFragmentNames>true</allowDuplicateFragmentNames>
                         </webApp>
                     </configuration>

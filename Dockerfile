@@ -8,5 +8,5 @@ RUN mvn package
 
 FROM jetty:9-jre8-alpine
 USER jetty:jetty
-COPY --from=builder /build/target/hapi-fhir-jpaserver.war /var/lib/jetty/webapps/root.war
+COPY --from=builder /build/target/philips-vitalhealth-fhir-server.war /var/lib/jetty/webapps/root.war
 EXPOSE 8080

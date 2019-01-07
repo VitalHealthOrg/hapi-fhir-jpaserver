@@ -42,7 +42,7 @@
 		<servlet-class>ca.uhn.fhir.jpa.demo.JpaServerDemo</servlet-class>
 		<init-param>
 			<param-name>ImplementationDescription</param-name>
-			<param-value>FHIR JPA Server</param-value>
+			<param-value>philips-vitalhealth-fhir-server</param-value>
 		</init-param>
 		<init-param>
 			<param-name>FhirVersion</param-name>

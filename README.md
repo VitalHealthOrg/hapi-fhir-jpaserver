@@ -1,52 +1,37 @@
-# HAPI-FHIR Starter Project
+# HAPI-FHIR Server Proof of Concept
 
-This project is a complete starter project you can use to deploy a FHIR server using HAPI FHIR JPA.
+This project is build upon the hapi starter project. Some branding customization and docker build and compose added.
 
 # Prerequisites
 
 In order to use this sample, you should have:
 
-* [This project](https://github.com/hapifhir/hapi-fhir-jpaserver-starter) checked out. You may wish to create a GitHub Fork of the project and check that out instead so that you can customize the project and save the results to GitHub.
-* Oracle Java (JDK) installed: Minimum JDK8 or newer.
-* Apache Maven build tool (newest version)
+* This project checked out. You may wish to create a GitHub Fork of the project and check that out instead so that you can customize the project and save the results to GitHub.
+* Docker installed
 
 # Running Locally
 
-The easiest way to run this server is to run it directly in Maven using a built-in Jetty server. To do this, execute the following command:
+The easiest way to run this server is to run it with docker compose. To do this, execute the following command:
 
 ```
-mvn jetty:run
+docker-compose up --build
 ```
 
 Then, browse to the following link to use the server:
 
-[http://localhost:8080/hapi-fhir-jpaserver/](http://localhost:8080/hapi-fhir-jpaserver/)
+[http://localhost:8080/](http://localhost:8080/)
 
-# Deploying to a Container
+# Build
 
-Using the Maven-Embedded Jetty method above is convenient, but it is not a good solution if you want to leave the server running in the background.
+To build the project you could also use docker:
 
-Most people who are using HAPI FHIR JPA as a server that is accessible to other people (whether internally on your network or publically hosted) will do so using an Application Server, such as [Apache Tomcat](http://tomcat.apache.org/) or [Jetty](https://www.eclipse.org/jetty/). Note that any Servlet 3.0+ compatible Web Container will work (e.g Wildfly, Websphere, etc.).
+```
+docker run -it --rm --name my-maven-project -v C:\Dev\Platform\repos\hapi-fhir-jpaserver:/usr/src/mymaven -w /usr/src/mymaven maven:3.3-jdk-8 mvn clean install
+```
 
-Tomcat is very popular, so it is a good choice simply because you will be able to find many tutorials online. Jetty is a great alternative due to its fast startup time and good overall performance.
-
-To deploy to a container, you should first build the project:
-
+or maven (if maven and jdk 8 are installed.)
 ```
 mvn clean install
 ```
 
-This will create a file called `hapi-fhir-jpaserver.war` in your `target` directory. This should be installed in your Web Container according to the instructions for your particular container. For example, if you are using Tomcat, you will want to copy this file to the `webapps/` directory.
-
-Again, browse to the following link to use the server (note that the port 8080 may not be correct depending on how your server is configured).
-
-[http://localhost:8080/hapi-fhir-jpaserver/](http://localhost:8080/hapi-fhir-jpaserver/)
-
-# Customizing The Web Testpage UI
-
-The UI that comes with this server is an exact clone of the server available at [http://hapi.fhir.org](http://hapi.fhir.org). You may skin this UI if you'd like. For example, you might change the introductory text or replace the logo with your own.
-
-The UI is customized using [Thymeleaf](https://www.thymeleaf.org/) template files. You might want to learn more about Thymeleaf, but you don't necessarily need to: they are quite easy to figure out.
-
-Several template files that can be customized are found in the following directory: [https://github.com/hapifhir/hapi-fhir-jpaserver-starter/tree/master/src/main/webapp/WEB-INF/templates](https://github.com/hapifhir/hapi-fhir-jpaserver-starter/tree/master/src/main/webapp/WEB-INF/templates)
-
+This will create a file called `philips-vitalhealth-fhir-server.war` in your `target` directory. This can be hosted by for example jetty or tomcat.
